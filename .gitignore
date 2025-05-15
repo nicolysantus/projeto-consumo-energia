@@ -1,9 +1,7 @@
-# Build
+# Pastas build e node_modules
 /dist
-/build
-
-# Node modules
 /node_modules
+/build
 
 # Logs
 logs
@@ -17,11 +15,11 @@ lerna-debug.log*
 # OS
 .DS_Store
 
-# Coverage
+# Test coverage
 /coverage
 /.nyc_output
 
-# IDEs and editors
+# IDEs e editores
 /.idea
 .project
 .classpath
@@ -30,26 +28,29 @@ lerna-debug.log*
 .settings/
 *.sublime-workspace
 
-# VSCode settings (ignore everything except shared settings)
+# VSCode (exceto arquivos de configuração específicos)
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# Env files
-.env*
-!.env.example
+# Arquivos dotenv
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 
-# Temp
+# Arquivos temporários
 .temp
 .tmp
 
-# Runtime
+# Runtime data
 pids
 *.pid
 *.seed
 *.pid.lock
 
-# Diagnostic reports
+# Relatórios de diagnóstico node
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
