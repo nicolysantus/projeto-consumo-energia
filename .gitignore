@@ -54,3 +54,6 @@ pids
 
 # Relatórios de diagnóstico node
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Package lock
+package-lock.json
