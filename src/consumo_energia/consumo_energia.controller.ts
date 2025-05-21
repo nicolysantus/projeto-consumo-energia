@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Query } from '@nestjs/common';
+import { Controller, Post, Body, Get, Query, Delete, Param } from '@nestjs/common';
 import { ConsumoEnergiaService } from './consumo_energia.service';
 import { CreateConsumoDto } from './dto/create-consumo.dto';
 
@@ -13,11 +13,11 @@ export class ConsumoEnergiaController {
 
   @Get('historico')
   consultarHistorico(
-    @Query('usuarioId') usuarioId: string,
-    @Query('dataInicio') dataInicio: string,
-    @Query('dataFim') dataFim: string,
+    @Query('usuarioId') usuarioId?: string,
+    @Query('dataInicio') dataInicio?: string,
+    @Query('dataFim') dataFim?: string,
   ) {
-    return this.consumoService.consultarHistorico(usuarioId, dataInicio, dataFim);
+    return this.consumoService.consultarHistorico(usuarioId ?? '', dataInicio ?? '', dataFim ?? '');
   }
 
   @Get('alerta')
@@ -25,5 +25,15 @@ export class ConsumoEnergiaController {
     const alerta = this.consumoService.gerarAlerta(usuarioId);
     if (alerta) return { alerta };
     return { alerta: 'Nenhum alerta para o usuário.' };
+  }
+
+  @Delete(':id')
+  removerConsumo(@Param('id') id: string) {
+    const ok = this.consumoService.removerConsumo(Number(id));
+    if (ok) {
+      return { success: true };
+    } else {
+      return { success: false, message: 'Registro não encontrado.' };
+    }
   }
 }

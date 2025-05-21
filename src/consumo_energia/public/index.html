@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=400, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Monitoramento de Consumo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="cabecalho">
+      <h1 class="titulo">Monitoramento de Consumo! <span>💡</span></h1>
+      <img src="assets/notificacao.png" alt="Notificações" class="notify-icon"
+        onclick="openModal('modalNotificacao')" />
+    </header>
+
+    <div class="top-info">
+      <div class="top-info-card">
+        <div class="top-info-left">
+          <div class="data-dia"></div>
+          <div class="lampada-icon-bg">
+            <img src="assets/lampada.png" alt="Lâmpada" class="lampada-img" />
+          </div>
+          <div class="mensagem-consumo">Consumo consciente só depende da gente!</div>
+        </div>
+        <div class="top-info-right">
+          <div class="graus"></div>
+          <div class="cidade">São Paulo, SP</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-registrar" onclick="openModal('modalRegistro')">
+      <img src="assets/mais.png" alt="Mais" class="icone-mais" />
+      Registrar Consumo
+    </button>
+
+    <div class="botoes">
+      <button onclick="mostrar('historico')">Histórico 🧾</button>
+      <button onclick="mostrar('alertas')">Alertas ❗</button>
+    </div>
+
+    <div class="lista-wrapper">
+      <div id="historico" class="lista"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <img src="assets/economizar.png" alt="Ícone economizar" class="footer-icon" />
+      <div class="footer-textos">
+        <p class="economizar">Vamos economizar!</p>
+        <p class="creditos">Desenvolvido por Nicoly Santos</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="modalRegistro" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modalRegistro')">×</span>
+      <h2>Registrar Consumo 💡</h2>
+
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" placeholder="Digite o nome do usuário" />
+
+      <label for="quantidade">Quantidade (kWh):</label>
+      <input type="number" id="quantidade" placeholder="Digite a quantidade consumida (kWh)" />
+
+      <label for="data">Data:</label>
+      <input type="date" id="data" />
+
+      <button onclick="registrar()">Registrar</button>
+    </div>
+  </div>
+
+  <div id="modalNotificacao" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modalNotificacao')">×</span>
+      <h2>Notificações</h2>
+
+      <div class="notificacao-box">
+        <h3>Você Sabia?</h3>
+        <img src="assets/imagem.png" alt="Imagem ilustrativa" class="notificacao-img" />
+        <p>Com a reciclagem do aço as siderúrgicas economizam energia equivalente ao abastecimento de 18 milhões de
+          residências por ano.</p>
+        <small>Imagem ilustrativa</small>
+      </div>
+
+      <div class="notificacao-box">
+        <p><strong>Ontem:</strong> Consumo residencial caiu 8% no último mês.</p>
+      </div>
+
+      <div class="notificacao-box">
+        <p><strong>Outras:</strong> Energia solar cresce 15% na região, reduzindo impacto ambiental.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="credito-canto"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

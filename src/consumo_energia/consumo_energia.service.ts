@@ -22,10 +22,11 @@ export class ConsumoEnergiaService {
   }
 
   consultarHistorico(usuarioId: string, dataInicio: string, dataFim: string): ConsumoEnergia[] {
-    const inicio = new Date(dataInicio);
-    const fim = new Date(dataFim);
+    // Se usuarioId for vazio, retorna todos os registros
+    const inicio = dataInicio ? new Date(dataInicio) : new Date('2000-01-01');
+    const fim = dataFim ? new Date(dataFim) : new Date('2100-12-31');
     return this.consumos.filter(c => 
-      c.usuarioId === usuarioId &&
+      (!usuarioId || c.usuarioId === usuarioId) &&
       c.dataLeitura >= inicio &&
       c.dataLeitura <= fim
     ).sort((a, b) => a.dataLeitura.getTime() - b.dataLeitura.getTime());
@@ -42,5 +43,14 @@ export class ConsumoEnergiaService {
       return `Alerta: consumo elevado em ${ultimo.dataLeitura.toISOString().substring(0,10)}. Consumo atual: ${ultimo.quantidadeKwh} kWh, consumo anterior: ${penultimo.quantidadeKwh} kWh.`;
     }
     return null;
+  }
+
+  removerConsumo(id: number): boolean {
+    const index = this.consumos.findIndex(c => c.id === id);
+    if (index !== -1) {
+      this.consumos.splice(index, 1);
+      return true;
+    }
+    return false;
   }
 }
