@@ -15,6 +15,8 @@ Desenvolvido por: **Nicoly Santos**
 - 🔌 **Registro de Consumo:** Registra o consumo mensal de energia de cada usuário (kWh + data).
 - 📈 **Histórico de Consumo:** Permite consultar o histórico de consumo em um período determinado.
 - 🚨 **Alerta de Consumo Elevado:** Gera alertas automáticos se o consumo do mês atual for maior que o do mês anterior.
+- ❌ **Remoção de Registros:** Permite excluir registros de consumo específicos por ID.
+- 🔔 **Notificações:** Interface dedicada para exibir alertas e notificações de consumo no front-end.
 
 ---
 
@@ -23,6 +25,7 @@ Desenvolvido por: **Nicoly Santos**
 - **Back-end:** NestJS, TypeScript, Node.js
 - **Banco de Dados:** Simulado em memória para fins didáticos
 - **Testes de API:** Postman
+- **Front-end:** HTML, CSS e JavaScript
 
 ---
 
@@ -41,8 +44,8 @@ npm install -g @nestjs/cli
 ### 2. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/nestjs-consumo-energia.git
-cd nestjs-consumo-energia
+git clone https://github.com/nicolysantus/projeto-consumo-energia.git
+cd projeto-consumo-energia
 ```
 
 ---
@@ -63,6 +66,12 @@ npm run start
 
 Acesse em:  
 [http://localhost:3000](http://localhost:3000)
+
+---
+
+### 5. Inicie o front-end
+
+Abra o arquivo `index.html` no navegador.
 
 ---
 
@@ -100,7 +109,7 @@ Acesse em:
 
 ### 🔸 Consultar Histórico
 
-- **GET** `/historico?usuarioId=usuario123&inicio=2025-01-01&fim=2025-12-31`
+- **GET** `/historico?usuarioId=usuario123&dataInicio=2025-01-01&dataFim=2025-12-31`
 
 **Resposta:**
 ```json
@@ -129,6 +138,30 @@ Acesse em:
 
 ---
 
+### 🔸 Remover Consumo
+
+- **DELETE** `/:id`
+
+**Exemplo:** `/consumo-energia/1`
+
+**Resposta:**
+```json
+{
+  "success": true
+}
+```
+
+Caso o registro não exista:
+
+```json
+{
+  "success": false,
+  "message": "Registro não encontrado."
+}
+```
+
+---
+
 ## 📁 Estrutura de Pastas
 
 ```
@@ -149,6 +182,6 @@ src
 
 ## 📚 Observações Finais
 
-Este projeto é **educacional** e tem como principal objetivo aplicar na prática os conhecimentos adquiridos sobre desenvolvimento de APIs RESTful com **NestJS**.
+Este projeto é **educacional** e tem como principal objetivo aplicar na prática os conhecimentos adquiridos sobre desenvolvimento de APIs RESTful com **NestJS** e interface front-end com HTML, CSS e JavaScript.
 
-Sinta-se à vontade para testar, adaptar ou expandir o sistema conforme seu interesse! 🚀
+Sinta-se à vontade para testar, adaptar ou expandir o sistema conforme seu interesse!
