@@ -187,6 +187,6 @@ src
 
 ## 📚 Observações Finais
 
-Este projeto é **educacional** e tem como principal objetivo aplicar na prática os conhecimentos adquiridos sobre desenvolvimento de APIs RESTful com **NestJS** e interface front-end com HTML, CSS e JavaScript.
+Este projeto é **educacional** e tem como principal objetivo aplicar na prática os conhecimentos adquiridos nas aulas.
 
-Sinta-se à vontade para testar, adaptar ou expandir o sistema conforme seu interesse!
+Sinta-se à vontade para testar, adaptar ou expandir a aplicação conforme seu interesse!
