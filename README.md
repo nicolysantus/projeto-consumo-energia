@@ -145,6 +145,9 @@ Acesse em:
   "alerta": "Nenhum alerta para o usuário."
 }
 ```
+
+---
+
 ### 🔸 Remover Consumo
 
 - **DELETE** `/consumo-energia/:id`  
