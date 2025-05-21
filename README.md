@@ -1,6 +1,9 @@
 # ⚡ Monitoramento de Consumo de Energia
 
-Aplicação desenvolvida como projeto acadêmico para a disciplina de **Web Mobile**, no curso de **Análise e Desenvolvimento de Sistemas** da **Universidade Presbiteriana Mackenzie**.  
+Aplicação desenvolvida como projeto acadêmico para a disciplina de 
+**Web Mobile**, no curso de 
+**Análise e Desenvolvimento de Sistemas** da 
+**Universidade Presbiteriana Mackenzie**.  
 Tem como objetivo incentivar o uso consciente de energia por meio do monitoramento de consumo.
 
 Desenvolvido por: **Nicoly Santos**
