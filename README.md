@@ -1,11 +1,11 @@
 # ⚡ Monitoramento de Consumo de Energia
 
 Aplicação desenvolvida como projeto acadêmico para a disciplina de **Web Mobile**, no curso de **Análise e Desenvolvimento de Sistemas** da **Universidade Presbiteriana Mackenzie**.  
-O objetivo é promover o uso consciente de energia e contribuir com o **ODS 7** da ONU:  
-**"Garantir o acesso a fontes de energia fiáveis, sustentáveis e modernas para todos."**
+Tem como objetivo incentivar o uso consciente de energia por meio do monitoramento de consumo.
 
 Desenvolvido por: **Nicoly Santos**
 
+# 📱 Front-End 
 ![Interface do Front-End](https://drive.google.com/uc?export=view&id=15KkOfCSwrMwNkqxu0II4iRPRraqUKe7U)
 
 ---
