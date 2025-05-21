@@ -12,11 +12,11 @@ Desenvolvido por: **Nicoly Santos**
 
 ## 🌟 Funcionalidades
 
-- 🔌 **Registro de Consumo:** Registra o consumo mensal de energia de cada usuário (kWh + data).
-- 📈 **Histórico de Consumo:** Permite consultar o histórico de consumo em um período determinado.
-- 🚨 **Alerta de Consumo Elevado:** Gera alertas automáticos se o consumo do mês atual for maior que o do mês anterior.
-- ❌ **Remoção de Registros:** Permite excluir registros de consumo específicos por ID.
-- 🔔 **Notificações:** Interface dedicada para exibir alertas e notificações de consumo no front-end.
+- 🔌 **Registro de Consumo:** Registra a quantidade de energia utilizada.  
+- 📈 **Histórico:** Exibe os registros de consumo.  
+- 🚨 **Alerta de Consumo:** Informa quando o consumo está elevado.  
+- ❌ **Remoção de Dados:** Permite excluir registros.  
+- 🔔 **Notificações:** Mostra avisos e dicas sobre consumo de energia.
 
 ---
 
