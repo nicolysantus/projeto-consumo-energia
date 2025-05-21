@@ -152,21 +152,23 @@ Acesse em:
 
 ```
 src
-├── app.controller.ts
 ├── app.module.ts
-├── app.service.ts
-└── consumo_energia
-    ├── consumo_energia.controller.ts
-    ├── consumo_energia.module.ts
-    ├── consumo_energia.service.ts
-    ├── dto
-    │   ├── registrar-consumo.dto.ts
-    │   └── filtro-historico.dto.ts
-    └── public
-        ├── assets
-        ├── index.html
-        ├── style.css
-        └── script.js
+├── main.ts
+├── consumo_energia
+│   ├── consumo_energia.controller.ts
+│   ├── consumo_energia.model.ts
+│   ├── consumo_energia.module.ts
+│   ├── consumo_energia.service.ts
+│   ├── dto
+│   │   ├── create-consumo.dto.ts
+│   │   └── query-consumo.dto.ts
+│   ├── public
+│   │   ├── index.html
+│   │   ├── script.js
+│   │   ├── style.css
+│   │   └── assets
+│   └── schemas
+│       └── consumo_energia.schema.ts
 ```
 
 ---
