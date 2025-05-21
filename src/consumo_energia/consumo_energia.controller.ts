@@ -7,12 +7,12 @@ export class ConsumoEnergiaController {
   constructor(private readonly consumoService: ConsumoEnergiaService) {}
 
   @Post('registrar')
-  registrarConsumo(@Body() dto: CreateConsumoDto) {
+  async registrarConsumo(@Body() dto: CreateConsumoDto) {
     return this.consumoService.registrarConsumo(dto);
   }
 
   @Get('historico')
-  consultarHistorico(
+  async consultarHistorico(
     @Query('usuarioId') usuarioId?: string,
     @Query('dataInicio') dataInicio?: string,
     @Query('dataFim') dataFim?: string,
@@ -21,15 +21,15 @@ export class ConsumoEnergiaController {
   }
 
   @Get('alerta')
-  gerarAlerta(@Query('usuarioId') usuarioId: string) {
-    const alerta = this.consumoService.gerarAlerta(usuarioId);
+  async gerarAlerta(@Query('usuarioId') usuarioId: string) {
+    const alerta = await this.consumoService.gerarAlerta(usuarioId);
     if (alerta) return { alerta };
     return { alerta: 'Nenhum alerta para o usuário.' };
   }
 
   @Delete(':id')
-  removerConsumo(@Param('id') id: string) {
-    const ok = this.consumoService.removerConsumo(Number(id));
+  async removerConsumo(@Param('id') id: string) {
+    const ok = await this.consumoService.removerConsumo(id);
     if (ok) {
       return { success: true };
     } else {

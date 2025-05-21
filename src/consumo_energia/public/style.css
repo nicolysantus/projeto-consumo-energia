@@ -122,10 +122,9 @@ body {
   text-shadow: 0 1px 4px rgba(0,0,0,0.18);
   margin-bottom: 6px;
   max-width: 100%;
-  white-space: normal;
+  white-space: nowrap;
   overflow: visible;
   text-overflow: unset;
-  white-space: nowrap;
 }
 .lampada-icon-bg {
   display: flex;
@@ -379,7 +378,7 @@ footer {
 
 .modal-content {
   width: 336px;
-  min-height: 300px;
+  height: 437px;
   background: linear-gradient(120deg, #FFFDE4 0%, #F9EFFF 100%);
   border-radius: 36px;
   padding: 20px;
@@ -495,15 +494,43 @@ footer {
 
 #modalNotificacao .modal-content {
   width: 336px;
-  height: 570px;
+  min-height: 570px;
   background: linear-gradient(120deg, #FFFDE4 0%, #F9EFFF 100%);
   border-radius: 36px;
-  margin: 10% auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.13);
   position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.13);
-  overflow-y: auto;
+}
+#modalNotificacao .notificacao-box {
+  width: 100%;
   box-sizing: border-box;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #FFFDE4 0%, #F9EFFF 100%);
+  color: #393939;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: unset;
+  text-align: center;
+}
+#modalNotificacao .notificacao-box.com-imagem {
+  min-height: 140px;
+}
+#modalNotificacao .notificacao-img {
+  width: 100%;
+  height: auto;
+  max-height: 140px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 8px;
 }
 
 #modalNotificacao .modal-content h2 {
@@ -610,6 +637,12 @@ footer {
     font-size: 9px;
     max-width: 90px;
   }
+  #modalNotificacao .modal-content, #modalRegistro .modal-content {
+    width: 95vw;
+    min-width: 0;
+    border-radius: 18px;
+    padding: 10px;
+  }
 }
 
 /* Mantém o card de temperatura (top-info-card) como está */
@@ -682,56 +715,4 @@ footer {
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 16px 0 rgba(180, 140, 80, 0.18), 0 1px 4px 0 rgba(120, 80, 180, 0.08);
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  width: 336px;
-  min-height: 300px;
-  background: linear-gradient(120deg, #FFFDE4 0%, #F9EFFF 100%);
-  border-radius: 36px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.13);
-  position: relative;
-}
-
-.modal-content .close {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  font-size: 25px;
-  font-weight: bold;
-  color: #E6A14A;
-  cursor: pointer;
-  user-select: none;
-}
-
-.modal[style*="display: flex"] {
-  display: flex !important;
-}
-
-@media (max-width: 480px) {
-  .modal-content {
-    width: 95vw;
-    min-width: 0;
-    border-radius: 18px;
-    padding: 10px;
-  }
 }

@@ -36,6 +36,8 @@ async function mostrar(tipo) {
     div.className = 'card' + (user.quantidadeKwh >= 180 ? ' alerta' : '');
     const mensagem = user.quantidadeKwh >= 180 ? 'Consumo elevado!' : 'Sem alertas.';
     const icone = user.quantidadeKwh >= 180 ? 'alerta.png' : 'check.png';
+    // Corrige para usar _id do MongoDB
+    const idRegistro = user._id || user.id;
     div.innerHTML = `
       <img src="assets/lixeira.png" alt="Excluir" class="lixeira-icone" style="position:absolute;top:6px;right:8px;width:18px;height:18px;cursor:pointer;z-index:3;" title="Excluir registro" />
       <div class="card-content-left">
@@ -55,17 +57,17 @@ async function mostrar(tipo) {
     lixeira.addEventListener('click', async (e) => {
       e.stopPropagation();
       try {
-        const resp = await fetch(`${API_URL}/${user.id}`, { method: 'DELETE' });
+        const resp = await fetch(`${API_URL}/${idRegistro}`, { method: 'DELETE' });
         const result = await resp.json();
         if (resp.ok && result.success) {
           mostrar('historico');
         } else {
           alert(result.message || 'Erro ao excluir registro.');
-          mostrar('historico'); // Garante atualização visual mesmo se der erro
+          mostrar('historico');
         }
       } catch (err) {
         alert('Erro ao excluir registro.');
-        mostrar('historico'); // Garante atualização visual mesmo se der erro
+        mostrar('historico');
       }
     });
     div.style.position = 'relative';
@@ -78,22 +80,24 @@ function formatarDataExtenso(dataStr) {
   return data.toLocaleDateString('pt-BR', {
     weekday: 'long',
     day: '2-digit',
-    month: 'long'
+    month: 'long',
+    year: 'numeric'
   });
 }
 
 function openModal(id) {
   const modal = document.getElementById(id);
-  if (modal) {
-    modal.style.display = 'flex';
-    modal.scrollTop = 0;
-  }
+  modal.style.display = 'flex';
 }
 
 function closeModal(id) {
   const modal = document.getElementById(id);
-  if (modal) {
-    modal.style.display = 'none';
+  modal.style.display = 'none';
+  // Limpa os campos do modal de registro ao fechar
+  if (id === 'modalRegistro') {
+    document.getElementById('nome').value = '';
+    document.getElementById('quantidade').value = '';
+    document.getElementById('data').value = '';
   }
 }
 
@@ -149,7 +153,7 @@ document.addEventListener('DOMContentLoaded', atualizarCardTemperatura);
 
 function formatarDataPorExtenso() {
   const data = new Date();
-  const opcoes = { weekday: 'long', day: '2-digit', month: 'long' };
+  const opcoes = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
   let texto = data.toLocaleDateString('pt-BR', opcoes);
   texto = texto.charAt(0).toUpperCase() + texto.slice(1);
   return texto;
