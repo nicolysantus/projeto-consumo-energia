@@ -145,6 +145,30 @@ Acesse em:
   "alerta": "Nenhum alerta para o usuário."
 }
 ```
+### 🔸 Remover Consumo
+
+- **DELETE** `/consumo-energia/:id`  
+Remove um registro de consumo pelo seu ID.
+
+**Exemplo de requisição:**
+```
+DELETE http://localhost:3000/consumo-energia/6650e1f2c2a1b2c3d4e5f6a7
+```
+
+**Resposta de sucesso:**
+```json
+{
+  "success": true
+}
+```
+
+**Resposta de erro (ID não encontrado):**
+```json
+{
+  "success": false,
+  "message": "Registro não encontrado."
+}
+```
 
 ---
 
