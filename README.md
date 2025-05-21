@@ -173,9 +173,14 @@ src
     ├── consumo_energia.controller.ts
     ├── consumo_energia.module.ts
     ├── consumo_energia.service.ts
-    └── dto
-        ├── registrar-consumo.dto.ts
-        └── filtro-historico.dto.ts
+    ├── dto
+    │   ├── registrar-consumo.dto.ts
+    │   └── filtro-historico.dto.ts
+    └── public
+        ├── assets
+        ├── index.html
+        ├── style.css
+        └── script.js
 ```
 
 ---
