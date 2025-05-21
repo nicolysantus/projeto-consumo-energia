@@ -85,12 +85,6 @@ Acesse em:
 
 ---
 
-### 6. Inicie o front-end
-
-Abra o arquivo `index.html` no navegador.
-
----
-
 ## 📬 Endpoints da API
 
 > Base URL: `http://localhost:3000/consumo-energia`
@@ -149,30 +143,6 @@ Abra o arquivo `index.html` no navegador.
 ```json
 {
   "alerta": "Nenhum alerta para o usuário."
-}
-```
-
----
-
-### 🔸 Remover Consumo
-
-- **DELETE** `/:id`
-
-**Exemplo:** `/consumo-energia/6650e1f2c2a1b2c3d4e5f6a7`
-
-**Resposta:**
-```json
-{
-  "success": true
-}
-```
-
-Caso o registro não exista:
-
-```json
-{
-  "success": false,
-  "message": "Registro não encontrado."
 }
 ```
 
