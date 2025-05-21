@@ -146,6 +146,12 @@ Acesse em:
 }
 ```
 
+```json
+{
+  "alerta": "Consumo elevado!"
+}
+```
+
 ---
 
 ### 🔸 Remover Consumo
